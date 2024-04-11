@@ -1,0 +1,112 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$slider-space-between: 16px;
+
+$mobile-content-padding: 24px;
+$mobile-slider-width: calc(100%);
+$mobile-slide-width: calc($container-width - 2 * $mobile-content-padding);
+$mobile-slider-content-width: calc(3 * $mobile-slide-width + $slider-space-between * 2);
+
+:export {
+    slider-space-between: $slider-space-between;
+}
+
+.module {
+    background-color: $white-color;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.content {
+    z-index: 10;
+    position: relative;
+    width: 100%;
+
+    padding: 40px 0;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    align-content: center;
+    gap: 24px;
+    color: $blue-color;
+}
+
+.titleBox {
+    padding: 0 $mobile-content-padding;
+}
+
+.historySliderBox {
+    position: relative;
+    width: $mobile-slider-width;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 24px;
+
+    .sliderBox {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .sliderSubBox {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .sliderContent {
+        width: $mobile-slider-content-width;
+    }
+
+    .slideContent {
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        overflow: hidden;
+    }
+
+    .imgBox {
+        position: relative;
+        height: auto;
+        width: 100%;
+        aspect-ratio: 720 / 480;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .textBox {
+        padding: 24px 0;
+        padding-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .date {
+            display: inline-block;
+        }
+
+        .dateEvent {
+            display: inline-block;
+        }
+    }
+}
+
+.sliderButtonsClassName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@import './History_tablet.module.scss';
+@import './History_desktop.module.scss';

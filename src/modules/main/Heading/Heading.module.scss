@@ -1,0 +1,45 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $blue-color;
+}
+
+.wrapper {
+    height: auto;
+    width: 100%;
+}
+
+.content {
+    position: relative;
+    height: auto;
+    width: 100%;
+    color: $white-color;
+}
+
+.titleBox {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 24px;
+}
+
+
+
+@media #{$tablet} {
+    .titleBox {
+        gap: 16px;
+        padding-right: 35%;
+    }
+}
+
+
+
+@media #{$desktop} {
+    .titleBox {
+        padding: 64px 40px;
+        padding-right: 45%;
+        gap: 24px;
+    }
+}

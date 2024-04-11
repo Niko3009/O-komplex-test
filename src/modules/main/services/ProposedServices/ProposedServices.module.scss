@@ -1,0 +1,206 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$margin-1: 2px;
+
+.module {
+    height: auto;
+    background-color: $grey-color;
+}
+
+.wrapper {
+    height: auto;
+    position: relative;
+    color: $blue-color;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 24px;
+}
+
+.allServicesBox {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.serviceBox {
+    position: relative;
+    height: 200px;
+
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+    @include transition(500ms);
+
+    @include mouse-hover {
+        .serviceBG {
+            width: calc(100% - 2 * $margin-1);
+            height: calc(100% - 2 * $margin-1);
+            margin: $margin-1;
+        }
+
+        .serviceNameBox {
+            .serviceNameLine {
+                width: 100%;
+            }
+        }
+
+        .rotationWrapper {
+            transform: rotate(-0.125turn);
+        }
+    }
+
+    .serviceBG {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: $white-color;
+    }
+
+    .icon {
+        height: 48px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 5px;
+
+        width: 32px;
+        aspect-ratio: 1;
+
+        padding: 10px;
+        background-color: $blue-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+    }
+
+    .serviceNameBox {
+        width: max-content;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .serviceName {
+            padding: 2px;
+        }
+
+        .serviceNameLine {
+            border-bottom: solid 1px $blue-color;
+            width: 0;
+        }
+    }
+}
+
+.buttonBox {
+    display: none;
+}
+
+
+
+@media #{$tablet} {
+    .content {
+        padding: 40px 24px;
+        gap: 32px;
+    }
+
+    .allServicesBox {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .serviceBox {
+        height: 280px;
+        width: 100%;
+
+        .icon {
+            height: 56px;
+        }
+    }
+}
+
+
+
+@media #{$desktop} {
+    .content {
+        padding: 80px 40px;
+        gap: 64px;
+    }
+
+    .allServicesBox {
+        min-height: 840px;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(13, 1fr);
+        align-items: flex-end;
+        gap: 40px;
+
+        &>* {
+            &:nth-child(1) {
+                grid-column: span 6;
+            }
+
+            &:nth-child(2) {
+                grid-column-start: 10;
+                grid-column-end: -1;
+            }
+
+            &:nth-child(3) {
+                grid-column: span 4;
+            }
+
+            &:nth-child(4) {
+                grid-column: span 6;
+            }
+
+            &:nth-child(5) {
+                grid-column: span 3;
+            }
+        }
+    }
+
+    .serviceBox {
+        height: 400px;
+        width: 100%;
+        padding: 40px;
+
+        .icon {
+            height: 90px;
+        }
+    }
+
+    .buttonBox {
+        display: flex;
+        align-items: flex-end;
+
+        button {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import '@/assets/all.scss';
+
+$mobile-content-padding: 24px;
+$tablet-content-padding: 24px;
+
+$mobile-height: 38px;
+$tablet-height: 42px;
+$desktop-height: 48px;
+
+$min-timeline-width: 1080px;
+
+.timelineBox {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.timelineContent {
+    position: relative;
+    height: $mobile-height;
+    width: 100%;
+    max-width: max-content;
+
+    padding: 0 $mobile-content-padding;
+
+    overflow: hidden;
+    overflow-x: auto;
+    @include scrollbar(0);
+
+    .timelineDottedLine {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: $min-timeline-width;
+
+        &,
+        & * {
+            fill: $blue-color;
+            stroke: $blue-color;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .timelineDates {
+        height: 100%;
+        width: $min-timeline-width;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .timelineDate {
+        width: 4%;
+        height: 100%;
+        overflow: visible;
+        cursor: pointer;
+
+        * {
+            fill: $blue-color;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include mouse-hover {
+            * {
+                fill: $red-color;
+            }
+        }
+
+        &.active {
+
+            * {
+                fill: $red-color;
+            }
+        }
+    }
+}
+
+
+
+@media #{$tablet} {
+    .timelineContent {
+        height: $tablet-height;
+        padding: 0 $tablet-content-padding;
+
+        .timelineDates,
+        .timelineDottedLine {
+            width: $min-timeline-width;
+        }
+    }
+}
+
+
+
+@media #{$desktop} {
+    .timelineContent {
+        height: $desktop-height;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+
+        .timelineDates,
+        .timelineDottedLine {
+            width: 100%;
+        }
+    }
+}

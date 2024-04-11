@@ -1,0 +1,33 @@
+@import '@/assets/all.scss';
+
+$color-1: $blue-color;
+$color-2: $white-color;
+
+.MuiSlider-root {
+    position: static !important;
+    padding: 0 !important;
+
+    .MuiSlider-track,
+    .MuiSlider-rail {
+        background-color: $color-1;
+        color: $color-1;
+    }
+
+    .MuiSlider-thumb {
+        box-shadow: none !important;
+        border: 3px solid $color-1;
+        background-color: $color-2;
+    }
+
+    .MuiSlider-valueLabel {
+        display: none;
+    }
+
+    * {
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+}

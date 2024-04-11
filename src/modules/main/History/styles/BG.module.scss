@@ -1,0 +1,33 @@
+@import '@/assets/all.scss';
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    background-color: $white-color;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.bg_element {
+    background-color: $red-color;
+    width: 64px;
+    height: 64px;
+}
+
+@media #{$tablet} {
+    .bg_element {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+@media #{$desktop} {
+    .bg_element {
+        width: 160px;
+        height: 160px;
+    }
+}

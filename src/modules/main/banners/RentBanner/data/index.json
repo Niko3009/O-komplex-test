@@ -1,0 +1,9 @@
+{
+  "name": "banner-rent",
+
+  "data": {
+    "text": "Аренда и продажа контейнерного оборудования",
+    "button-text": "Перейти",
+    "img": { "src": "/svg/special/two-containers.svg" }
+  }
+}

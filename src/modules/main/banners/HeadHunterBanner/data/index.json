@@ -1,0 +1,10 @@
+{
+  "name": "banner-hh",
+
+  "data": {
+    "text": "Больше вакансий на HeadHunter",
+    "button-text": "Перейти на hh.ru",
+    "img": { "src": "/svg/special/hh.svg" },
+    "url": "https://hh.ru"
+  }
+}

@@ -1,0 +1,162 @@
+@import '@/assets/all.scss';
+
+.filtersPanel {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow: visible;
+
+    * {
+        user-select: none;
+        overflow: visible;
+    }
+
+    h1 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+    }
+
+    button {
+        padding: 0;
+    }
+
+    .modalTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        * {
+            display: flex;
+            align-items: center;
+        }
+
+        span {
+            margin-left: 4px;
+            font-size: 24px;
+        }
+
+        .resetButtonBox {
+            height: 24px;
+            width: auto;
+
+            .resetButton {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .locationSelects {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .locationItem {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            color: $grey-color-1;
+            cursor: pointer;
+        }
+
+        .location {
+            color: $blue-color;
+        }
+
+        .checkbox {
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    .contType {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .contTypeButtons {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            &>* {
+
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    border-left: none;
+                }
+            }
+        }
+    }
+
+    .contQual {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .contQualButtons {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            &>* {
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    border-left: none;
+                }
+            }
+        }
+    }
+
+    .onRequestBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+
+        p {
+            display: inline-block;
+            margin-top: 2px;
+        }
+    }
+
+    .cost {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        gap: 24px;
+
+        .costInputsBox {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cost-slider-box {
+            position: absolute;
+            bottom: 0;
+            height: 0;
+            overflow: visible;
+        }
+
+        .explanationForPrice {
+            color: $grey-color-1;
+        }
+    }
+}
+
+@import './FiltersPanel_desktop.module.scss';

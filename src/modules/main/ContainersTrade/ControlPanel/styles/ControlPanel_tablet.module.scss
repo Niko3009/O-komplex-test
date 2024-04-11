@@ -1,0 +1,102 @@
+@import '@/assets/all.scss';
+
+@media #{$tablet} {
+    .controlPanelBox {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        grid-template-rows: repeat(1, auto);
+
+        button {
+            width: fit-content;
+        }
+
+        &>* {
+            &:nth-child(1) {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+
+            &:nth-child(2) {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+
+            &:nth-child(3) {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+
+            &:nth-child(4) {
+                grid-row-start: 2;
+                grid-row-end: 3;
+                grid-column-start: 3;
+                grid-column-end: -1;
+            }
+        }
+
+        .tradeModeButtons {
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+@media #{$desktop} {
+    .controlPanelBox {
+        height: max-content;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 80px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .tradeModeButtons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .filtersPanel {
+            display: block;
+            width: 100%;
+            min-height: 300px;
+            background-color: $white-color;
+            padding: 40px 24px;
+            gap: 24px;
+        }
+
+        button {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 8px
+        }
+    }
+
+    .filtersControl {
+        // position: sticky;
+        // top: 80px;
+
+        .desktopFiltersPanel {
+            display: block
+        }
+
+        .loader-wrapper {
+            display: block
+        }
+
+        .filtersPanelButton {
+            display: none
+        }
+    }
+}

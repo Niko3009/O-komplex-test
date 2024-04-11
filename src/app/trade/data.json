@@ -1,0 +1,12 @@
+{
+  "data": {
+    "modules": {
+      "request-form": {
+        "name": "request-form",
+        "data": {
+          "title": "Предложить своё оборудование"
+        }
+      }
+    }
+  }
+}

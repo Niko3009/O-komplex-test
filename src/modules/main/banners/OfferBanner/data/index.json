@@ -1,0 +1,9 @@
+{
+  "name": "banner-proposal",
+  
+  "data": {
+    "text": "Актуальное коммерческое предложение",
+    "button-text": "Скачать PDF",
+    "img": { "src": "/svg/special/books.svg" }
+  }
+}

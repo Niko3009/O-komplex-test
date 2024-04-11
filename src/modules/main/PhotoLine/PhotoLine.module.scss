@@ -1,0 +1,14 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    position: relative;
+    padding: 0;
+}
+
+.photoLine {
+    position: relative;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1440 / 415;
+}

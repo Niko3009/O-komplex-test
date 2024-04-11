@@ -1,0 +1,73 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$column-gap: 8px;
+$width-1: calc((100% - $column-gap) / 2);
+
+.module {
+    min-height: 200px;
+    background-color: $grey-color;
+    overflow: visible;
+}
+
+.wrapper {
+    height: auto;
+    padding: 48px 24px;
+    top: 10px;
+}
+
+.content {
+    gap: 24px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    color: $blue-color;
+}
+
+.listBox {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+
+    .listTitle {
+        @include font(24px, 500, 24px);
+    }
+
+    .subListBox {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .cardsBox {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px
+    }
+
+    &.touch-blocked {
+        .cardsBox {
+            filter: blur(10px);
+            pointer-events: none;
+        }
+    }
+}
+
+.loader-wrapper {
+    z-index: 5;
+    position: absolute;
+    top: 200px;
+    height: 360px;
+    width: 100%;
+
+    &.disable {
+        display: none;
+    }
+}
+
+@import './ContainersTrade_tablet.module.scss';

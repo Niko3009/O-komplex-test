@@ -1,0 +1,18 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+@media #{$desktop} {
+    .wrapper {
+        h1 {
+            font-size: 104px;
+            font-weight: 500;
+            line-height: 125px;
+        }
+    }
+
+    .graphicPattern {
+        width: auto;
+        height: 100%;
+        aspect-ratio: 1/2;
+    }
+}

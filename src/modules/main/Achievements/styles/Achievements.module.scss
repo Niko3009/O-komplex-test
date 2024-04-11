@@ -1,0 +1,82 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $blue-color;
+}
+
+.wrapper {
+    height: auto;
+    position: relative;
+    background-color: $blue-color;
+}
+
+.content {
+    height: auto;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+.titleBox {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px;
+}
+
+.achievementsBox {
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    &>* {
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(6) {
+            .achievementContent {
+                background-color: transparent;
+            }
+        }
+
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5) {
+            .achievementContent {
+                background-color: $red-color;
+            }
+        }
+    }
+}
+
+.achievementBox {
+    height: 100%;
+
+    .achievementContent {
+        height: auto;
+        aspect-ratio: 1;
+
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+@import './Achievements_tablet.module.scss';

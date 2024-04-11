@@ -1,0 +1,19 @@
+@import '@/assets/all.scss';
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    height: 0;
+    overflow: visible;
+
+    div{
+        overflow: visible;
+    }
+    
+    // @include transition(0ms);
+}
+
+.slider-bar {
+    padding: 0;
+    overflow: visible;
+}

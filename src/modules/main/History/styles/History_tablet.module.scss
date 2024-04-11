@@ -1,0 +1,45 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$tablet-content-padding: 24px;
+$tablet-slide-width: calc($container-width - 2 * $tablet-content-padding);
+$tablet-slider-content-width: calc(3 * $tablet-slide-width + $slider-space-between * 2);
+
+@media #{$tablet} {
+    .content {
+        gap: 32px;
+    }
+
+    .titleBox {
+        padding: 0 $tablet-content-padding;
+    }
+
+    .historySliderBox {
+        gap: 32px;
+
+        .sliderBox {
+            padding: 0 $tablet-content-padding;
+        }
+
+        .sliderContent {
+            width: $tablet-slider-content-width;
+        }
+
+        .textBox {
+            padding: 24px 0px;
+            padding-bottom: 60px;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: none;
+            gap: 24px;
+
+            .date {
+                display: inline-block;
+            }
+
+            .dateEvent {
+                display: inline-block;
+            }
+        }
+    }
+}

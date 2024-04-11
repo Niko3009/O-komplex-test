@@ -1,0 +1,27 @@
+.dottedLine {
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow: hidden;
+
+    &Dot {
+        max-height: 10px;
+        min-height: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .icon {
+        width: 12px;
+        height: auto;
+        aspect-ratio: 1;
+        color: $blue-color;
+    }
+}

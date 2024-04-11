@@ -1,0 +1,73 @@
+@import '@/assets/all.scss';
+
+.graphicCell {
+  height: 100%;
+  width: 100%;
+}
+
+.redCell {
+  background-color: $red-color;
+}
+
+.blueCell {
+  background-color: $blue-color;
+}
+
+.whiteCell {
+  background-color: $white-color;
+}
+
+.donutCell {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  :only-child {
+    grid-row-start: 2;
+    grid-column-start: 2;
+  }
+}
+
+.chessedCell {
+  display: grid;
+
+  &.with3x3cells {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  &.with4x4cells {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  &.with5x5cells {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  &.with6x6cells {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+.stripedCell {
+  display: grid;
+
+  &.with3stripes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.with4stripes {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.with5stripes {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &.with6stripes {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "banner-requisites",
+
+  "data": {
+    "text": "Реквизиты",
+    "button-text": ["Реквизиты", "Лицензия"],
+    "img": { "src": "/svg/special/file.svg" }
+  }
+}

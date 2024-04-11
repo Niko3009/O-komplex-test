@@ -1,0 +1,66 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: $blue-color;
+  overflow: hidden;
+}
+
+.graphicPattern {
+  display: grid;
+  grid-template-columns: 1fr 146px 187px;
+  grid-template-rows: 187px 146px;
+
+  &>* {
+    background-color: $white-color;
+
+    &:nth-child(1) {
+      grid-row-start: 1;
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    &:nth-child(2) {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+@media #{$desktop} {
+  .graphicPattern {
+    display: grid;
+    grid-template-columns: 40px 140px 180px 1fr;
+    grid-template-rows: 1fr 180px 180px 140px;
+
+    &>* {
+      &:nth-child(1) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      &:nth-child(2) {
+        grid-row-start: 3;
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+
+      &:nth-child(3) {
+        display: block;
+        grid-row-start: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+    }
+  }
+}

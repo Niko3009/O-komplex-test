@@ -1,0 +1,43 @@
+variables:
+    HOST: '91.201.54.49'
+    PORT: '22'
+    USER: 'zhendong'
+    DOC_ROOT: '/home/zhendong/zhendong.rgtest.ru/www'
+    PROD_HOST: '80.87.108.110'
+    PROD_PORT: '22'
+    PROD_USER: 'ancheng'
+    PROD_DOC_ROOT: '/home/ancheng/ancheng.ltd/www'
+
+stages:
+    - deploy
+
+before_script:
+    - apt-get update -qq && apt-get install
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - mkdir -p ~/.ssh
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+deploy:develop:
+    stage: deploy
+    only:
+        - develop
+    script:
+        - ssh $USER@$HOST -p $PORT "cd $DOC_ROOT && pm2 stop zhendong"
+        - ssh $USER@$HOST -p $PORT "cd $DOC_ROOT && git checkout develop"
+        - ssh $USER@$HOST -p $PORT "cd $DOC_ROOT && git reset --hard HEAD"
+        - ssh $USER@$HOST -p $PORT "cd $DOC_ROOT && git pull origin develop"
+        - ssh $USER@$HOST -p $PORT "cd $DOC_ROOT && pm2 start zhendong"
+
+deploy:prod:
+    stage: deploy
+    only:
+        - main
+    when: manual
+    script:
+        - ssh $PROD_USER@$PROD_HOST -p $PROD_PORT "cd $PROD_DOC_ROOT && pm2 stop zhendong"
+        - ssh $PROD_USER@$PROD_HOST -p $PROD_PORT "cd $PROD_DOC_ROOT && git checkout main"
+        - ssh $PROD_USER@$PROD_HOST -p $PROD_PORT "cd $PROD_DOC_ROOT && git reset --hard HEAD"
+        - ssh $PROD_USER@$PROD_HOST -p $PROD_PORT "cd $PROD_DOC_ROOT && git pull origin main"
+        - ssh $PROD_USER@$PROD_HOST -p $PROD_PORT "cd $PROD_DOC_ROOT && pm2 start zhendong"

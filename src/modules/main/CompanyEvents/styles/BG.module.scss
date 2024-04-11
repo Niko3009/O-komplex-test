@@ -1,0 +1,36 @@
+@import '@/assets/all.scss';
+
+.bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-right: 24px;
+}
+
+.redSquare {
+    height: 332px;
+    width: 100%;
+    background-color: $red-color;
+}
+
+@media #{$tablet} {
+    .bg {
+        padding-right: 24px;
+    }
+
+    .redSquare {
+        height: 334px;
+    }
+}
+
+
+@media #{$desktop} {
+    .bg {
+        padding-right: 40px;
+    }
+
+    .redSquare {
+        height: 510px;
+    }
+}

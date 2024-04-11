@@ -1,0 +1,132 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$mobile-padding: 24px;
+$slide-content-min-width: calc($container-width - 2 * $mobile-padding);
+
+.module {
+    background-color: $blue-color;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.content {
+    z-index: 10;
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    color: $white-color;
+    padding: 40px $mobile-padding;
+    gap: 32px;
+}
+
+.titleBox {
+    display: block;
+}
+
+.sliderBox {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slideContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+    gap: 24px;
+
+    cursor: pointer;
+    @include transition(500ms);
+
+    @include mouse-hover {
+        .imgBox {
+            .img {
+                transform: scale(1.04);
+            }
+        }
+
+        .date {
+            color: $red-color;
+        }
+    }
+
+    .imgBox {
+        position: relative;
+        width: 100%;
+        height: 238px;
+        overflow: hidden;
+
+        .img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .date {
+        z-index: 10;
+        position: absolute;
+        top: 16px;
+        left: 0;
+        height: 32px;
+
+        background-color: $white-color;
+        padding: 8px 10px;
+        color: $blue-color;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 17px;
+    }
+}
+
+
+
+@media #{$tablet} {
+    .content {
+        padding: 40px 24px;
+        gap: 32px
+    }
+
+    .slideContent {
+        padding-bottom: 40px;
+        gap: 24px;
+
+        .imgBox {
+            height: 238px;
+        }
+
+        .date {
+            height: 36px;
+            padding: 8px 10px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .content {
+        position: relative;
+        padding: 80px 40px;
+        gap: 64px;
+    }
+
+    .slideContent {
+        padding-bottom: 40px;
+        gap: 24px;
+
+        .imgBox {
+            height: 318px;
+        }
+    }
+
+    .sliderButtons {
+        position: absolute;
+        margin: 80px 40px;
+        top: 0;
+        right: 0;
+    }
+}

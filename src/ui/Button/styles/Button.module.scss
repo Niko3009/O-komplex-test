@@ -1,0 +1,105 @@
+@import '@/assets/all.scss';
+
+$border-color-1: #2E37774D;
+
+.button {
+    height: 56px;
+    width: auto;
+
+    padding: 0px 24px;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    overflow: hidden;
+    @include transition(500ms);
+
+    @media (hover: hover) {
+        &:active {
+            transform: scale(0.975);
+        }
+    }
+
+    &.checkboxButton {
+        &:active {
+            transform: none;
+        }
+    }
+
+    &:disabled {
+        color: $border-color-1 !important;
+        background-color: $grey-color !important;
+        pointer-events: none;
+    }
+}
+
+.red {
+    background-color: $red-color;
+    border: 1px solid $red-color;
+    color: $white-color;
+
+    @include mouse-hover {
+        filter: brightness(1.15);
+    }
+}
+
+.blue {
+    background-color: $blue-color;
+    border: 1px solid $blue-color;
+    color: $white-color;
+
+    @include mouse-hover {
+        filter: brightness(1.15);
+    }
+}
+
+.white {
+    background-color: $white-color;
+    border: 1px solid $white-color;
+    color: $blue-color;
+
+    @include mouse-hover {
+        filter: brightness(0.85);
+    }
+
+    &.hoverTransparencyStyle {
+        @include mouse-hover {
+            background-color: transparent;
+            color: $white-color;
+        }
+    }
+}
+
+.grey {
+    background-color: transparent;
+    border: 1px solid $border-color-1;
+    color: $blue-color;
+
+    @include mouse-hover {
+        background-color: $white-color;
+    }
+}
+
+.header-white {
+    background-color: $white-color;
+    border: 1px solid $white-color;
+    color: $blue-color;
+
+    @include mouse-hover {
+        filter: brightness(0.85);
+    }
+}
+
+@media #{$desktop} {
+    .button {
+        height: 64px;
+        padding: 0px 40px;
+    }
+}

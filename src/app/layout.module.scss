@@ -1,0 +1,53 @@
+@import '@/assets/all.scss';
+
+$mobile-scrolled-height: calc(100dvh - $mobile-header-height);
+$tablet-scrolled-height: calc(100dvh - $tablet-header-height);
+$desktop-scrolled-height: calc(100dvh - $desktop-header-height);
+
+.layout {
+    width: 100dvw;
+}
+
+.scrolled {
+    position: relative;
+    height: $mobile-scrolled-height;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $blue-color;
+}
+
+.modules {
+    width: 100%;
+    height: 100%;
+}
+
+.module {
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+@media #{$tablet} {
+    .scrolled {
+        height: $tablet-scrolled-height;
+    }
+}
+
+@media #{$desktop} {
+    .scrolled {
+        height: $desktop-scrolled-height;
+    }
+}
+
+@media #{$desktop-wide} {
+    .module {
+        padding: 0 $module-padding;
+    }
+}

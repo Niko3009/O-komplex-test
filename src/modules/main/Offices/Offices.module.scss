@@ -1,0 +1,202 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$color-1: #2D377766;
+
+.module {
+    background-color: $grey-color;
+}
+
+.wrapper {
+    width: 100%;
+    color: $blue-color;
+}
+
+.content {
+    height: 100%;
+    position: relative;
+    padding: 40px 24px;
+    padding-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    h4 {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        color: $color-1;
+    }
+}
+
+.officesListBox {
+    height: 100%;
+    color: $blue-color;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemBox {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    align-items: flex-start;
+    background-color: $white-color;
+    border: solid 1px $grey-color;
+    padding: 24px 40px;
+    gap: 16px;
+
+    @include transition(100ms);
+
+    .officeBox {
+        display: grid;
+        grid-template-columns: 1fr 20px;
+        align-items: flex-start;
+        gap: 16px;
+        cursor: pointer;
+
+        .office {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        @include mouse-hover {
+            color: $red-color;
+
+            .icon {
+                color: $red-color;
+                stroke: $red-color;
+            }
+        }
+    }
+
+    .iconBox {
+        height: auto;
+        max-height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            color: $blue-color;
+            stroke: $blue-color
+        }
+    }
+
+    .detailsBox {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .detailsBox {
+        display: none;
+    }
+
+    &.active {
+
+        .officeBox,
+        .icon {
+            color: $red-color;
+            stroke: $red-color
+        }
+
+        .detailsBox {
+            display: flex;
+        }
+    }
+}
+
+.map-box {
+    position: relative;
+    height: 360px;
+}
+
+
+@media #{$tablet} {
+    .map-box {
+        height: 480px;
+    }
+}
+
+@media #{$desktop} {
+    .wrapper {
+        min-height: 600px;
+        width: 100%;
+        color: $blue-color;
+    }
+
+    .content {
+        height: 100%;
+        position: relative;
+        gap: 24px;
+
+        padding: 80px 40px;
+        padding-bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        gap: 40px;
+
+        &>* {
+            &:nth-child(1) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+
+            &:nth-child(2) {
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+        }
+
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 400;
+
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    .itemBox {
+        .iconBox {
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    .map-box {
+        height: 100%;
+    }
+}

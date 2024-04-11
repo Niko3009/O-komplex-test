@@ -1,0 +1,19 @@
+@import '@/assets/all.scss';
+
+.wrapper {
+    display: block;
+}
+
+.default {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.y-scroll {
+    overflow-y: scroll;
+}
+
+.x-scroll {
+    overflow-y: scroll;
+}

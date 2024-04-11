@@ -1,0 +1,314 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    height: auto;
+    background-color: $blue-color;
+}
+
+.wrapper {
+    height: auto;
+    color: $white-color;
+}
+
+.content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBox {
+    height: auto;
+
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.redBox {
+    z-index: 5;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    &>div {
+        height: 100%;
+    }
+
+    &Layout {
+        height: 100%;
+        background-color: $red-color;
+    }
+
+    .middleText {
+        padding: 40px 24px;
+
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.photoBox {
+    height: auto;
+    width: 100%;
+
+    .photoBoxLayout {
+        width: 100%;
+        aspect-ratio: 1;
+        height: auto;
+    }
+
+    .graphicPattern {
+        display: none;
+    }
+
+    .imgBox {
+
+        position: relative;
+        height: 100%;
+    }
+}
+
+.buttonBox {
+    height: auto;
+    padding: 40px 24px;
+
+    button {
+        width: 100%;
+    }
+}
+
+@media #{$tablet} {
+    .wrapper {
+        height: auto;
+        color: $white-color;
+    }
+
+    .content {
+        height: auto;
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(2, 1fr);
+
+        &>* {
+            &:nth-child(1) {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+
+            &:nth-child(4) {
+                grid-row-start: 3;
+                grid-row-end: 4;
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+        }
+    }
+
+    .titleBox {
+        height: auto;
+
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
+
+        .upperText {
+            width: 50%;
+        }
+    }
+
+    .redBox {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        &>div {
+            height: 100%;
+        }
+
+        &Layout {
+            height: 100%;
+            background-color: $red-color;
+        }
+
+        .middleText {
+            padding: 40px 24px;
+
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    }
+
+    .photoBox {
+        height: auto;
+        width: 100%;
+
+        .photoBoxLayout {
+            width: 100%;
+            aspect-ratio: 1;
+            height: auto;
+        }
+
+        .graphicPattern {
+            display: none;
+        }
+
+        .imgBox {
+            height: 100%;
+        }
+    }
+
+    .buttonBox {
+        height: auto;
+        padding: 40px 24px;
+
+        button {
+            width: 280px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    $wrapper-height: 960px;
+
+    .wrapper {
+        height: $wrapper-height;
+    }
+
+    .content {
+        height: 100%;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-columns: 2fr 1fr;
+
+        &>* {
+            box-sizing: border-box;
+
+            &:nth-child(1) {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                grid-column-start: 1;
+                grid-column-end: -2;
+            }
+
+            &:nth-child(2) {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                grid-column-start: -2;
+                grid-column-end: -1;
+            }
+
+            &:nth-child(3) {
+                grid-row-start: 2;
+                grid-row-end: -1;
+                grid-column-start: 1;
+                grid-column-end: -1;
+            }
+
+            &:nth-child(4) {
+                grid-row-start: -2;
+                grid-row-end: -1;
+                grid-column-start: -2;
+                grid-column-end: -1;
+            }
+        }
+    }
+
+    .titleBox {
+        height: 100%;
+
+        padding: 80px 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+
+        .upperText {
+            width: 460px;
+        }
+    }
+
+    .redBox {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        &>div {
+            position: absolute;
+            bottom: 0;
+        }
+
+        &Layout {
+            height: 100%;
+            width: 100%;
+            background-color: $red-color;
+        }
+
+        .middleText {
+            padding: 40px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    }
+
+    .photoBox {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        .photoBoxLayout {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 3fr 9fr 4fr;
+            align-content: end;
+        }
+
+        .graphicPattern {
+            width: 100%;
+            height: 100%;
+            min-height: calc($wrapper-height*3/4);
+
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .imgBox {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .buttonBox {
+        height: 100%;
+        padding: 80px 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        button {
+            width: 280px;
+        }
+    }
+}

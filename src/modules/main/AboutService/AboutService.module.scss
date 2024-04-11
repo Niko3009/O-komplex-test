@@ -1,0 +1,50 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $grey-color;
+}
+
+.wrapper {
+    height: auto;
+    color: $blue-color;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 24px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+}
+
+
+
+@media #{$tablet} {
+    .wrapper {
+        padding: 40px 24px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 40px;
+    }
+
+}
+
+
+
+@media #{$desktop} {
+    .wrapper {
+        padding: 80px 40px;
+        display: grid;
+        grid-template-columns: 60fr 84fr;
+        gap: 24px;
+    }
+}

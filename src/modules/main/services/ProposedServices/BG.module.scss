@@ -1,0 +1,30 @@
+@import '@/assets/all.scss';
+
+.bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.bottomSquare {
+    background-color: $blue-color;
+    height: auto;
+    width: 264px;
+    aspect-ratio: 1;
+}
+
+@media #{$tablet} {
+    .bottomSquare {
+        width: 428px;
+    }
+}
+
+@media #{$desktop} {
+    .bottomSquare {
+        width: 720px;
+    }
+}

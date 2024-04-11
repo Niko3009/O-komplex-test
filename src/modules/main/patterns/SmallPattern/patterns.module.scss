@@ -1,0 +1,56 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$pattern-max-width: $container-width;
+
+.module {
+  background-color: $blue-color;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.graphicPattern {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-items: flex-end;
+  align-items: flex-start;
+  overflow: hidden;
+
+  .cellBox {
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+.smallPattern {
+  // height: calc($pattern-max-width/4);
+  // width: $pattern-max-width;
+  height: calc(100dvw/4);
+  width: calc(100dvw);
+  grid-template-columns: repeat(4, 1fr);
+
+  .cellBox {
+    // min-height: calc($pattern-max-width/4);
+    // min-width: calc($pattern-max-width/4);
+    height: calc(100dvw/4);
+    width: calc(100dvw/4);
+  }
+}
+
+
+
+@media #{$desktop} {
+  .smallPattern {
+    height: calc($pattern-max-width/8);
+    width: $pattern-max-width;
+    grid-template-columns: repeat(8, 1fr);
+
+    .cellBox {
+      min-height: calc($pattern-max-width/8);
+      min-width: calc($pattern-max-width/8);
+    }
+  }
+}

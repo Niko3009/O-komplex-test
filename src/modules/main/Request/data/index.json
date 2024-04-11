@@ -1,0 +1,8 @@
+{
+  "name": "request-form",
+  "data": {
+    "title": "Заявка на услугу",
+    "description": "Оставьте заявку, наш менеджер свяжется с вами для обсуждения деталей",
+    "success-logo": { "src": "/svg/special/form-sending-message.svg" }
+  }
+}

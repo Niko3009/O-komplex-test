@@ -1,0 +1,66 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $blue-color;
+}
+
+.wrapper {
+    position: relative;
+    height: 720px;
+    color: $white-color;
+
+    h1 {
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 77px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+.content {
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+
+    padding: 64px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.bannerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttonBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphicPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: auto;
+    aspect-ratio: 1/2;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+@import './Banner404_tablet.module.scss';
+@import './Banner404_desktop.module.scss';

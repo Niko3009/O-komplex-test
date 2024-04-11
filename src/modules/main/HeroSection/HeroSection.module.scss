@@ -1,0 +1,96 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+$wrapper-min-height: calc(420px * (1 - $scrollbar-width / $desktop-min-width));
+
+.module {
+    background-color: $blue-color;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    div {
+        overflow: hidden;
+    }
+}
+
+.content {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    color: $white-color;
+}
+
+.titleBox {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 16px;
+}
+
+.sliderBox {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    // aspect-ratio: 720 / 420;
+    overflow: hidden;
+
+    .imgBox {
+        width: 100%;
+        height: min-content;
+    }
+}
+
+.sliderButtons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@media #{$tablet} {
+    .titleBox {
+        * {
+            max-width: 450px;
+        }
+    }
+}
+
+@media #{$desktop} {
+    .wrapper {
+        height: min-content;
+        width: 100%;
+        min-width: $container-width;
+    }
+
+    .content {
+        height: auto;
+        width: 100%;
+        min-width: $container-width;
+        max-height: min-content;
+
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: none;
+    }
+
+    .titleBox {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 64px 40px;
+        gap: 32px;
+    }
+
+    .sliderBox {
+        .imgBox {
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+}

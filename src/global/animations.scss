@@ -1,0 +1,76 @@
+@import '@/assets/all.scss';
+
+
+@media #{$desktop} {
+
+    // custom-zoom-in
+    [data-aos="custom-zoom-in"] {
+        transform: scale(0);
+
+        &.aos-animate {
+            transform: scale(1);
+        }
+    }
+
+    // custom-fade-in
+    [data-aos="custom-fade-in"] {
+        opacity: 0;
+
+        &.aos-animate {
+            opacity: 1;
+        }
+    }
+
+    // custom-fade-in-bottom
+    [data-aos="custom-fade-in-bottom"] {
+        transform: translateY(30px);
+        opacity: 0;
+
+        &.aos-animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    // slide-in-right
+    [data-aos="slide-in-right"] {
+        transform: translateX(100%);
+
+        &.aos-animate {
+            transform: translateX(0);
+        }
+    }
+
+    // custom-shutter-hor
+    [data-aos="custom-shutter-hor-left"],
+    [data-aos="custom-shutter-hor-right"] {
+        max-width: 0;
+        display: flex;
+        justify-content: flex-start;
+
+        &.aos-animate {
+            max-width: 100%;
+        }
+    }
+
+    [data-aos="custom-shutter-hor-right"] {
+        justify-content: flex-end;
+    }
+
+    // custom-shutter-ver
+    [data-aos="custom-shutter-ver-top"],
+    [data-aos="custom-shutter-ver-bottom"] {
+        max-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &.aos-animate {
+            max-height: 100%;
+        }
+    }
+
+    [data-aos="custom-shutter-ver-bottom"] {
+        justify-content: flex-end;
+    }
+}

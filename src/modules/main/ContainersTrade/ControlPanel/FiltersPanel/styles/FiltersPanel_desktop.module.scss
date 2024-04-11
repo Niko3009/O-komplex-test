@@ -1,0 +1,25 @@
+@import '@/assets/all.scss';
+
+@media #{$desktop} {
+    .filtersPanel {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h1 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 22px;
+        }
+
+        .locationSelects {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .confirmButton {
+            display: none;
+        }
+    }
+}

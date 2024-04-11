@@ -1,0 +1,22 @@
+// basic colors
+
+$white-color: #FFFFFF;
+$black-color: #2B2A29;
+$grey-color: #EEF3F9;
+$blue-color: #2E3777;
+$red-color: #B5252F;
+
+// extra colors
+
+$grey-color-1: #9EA9B7;
+$blue-color-1: #2e36761a;
+
+// 
+
+:export {
+    white-color: $white-color;
+    grey-color: $grey-color;
+    black-color: $black-color;
+    red-color: $red-color;
+    blue-color: $blue-color;
+}

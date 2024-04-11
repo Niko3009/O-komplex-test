@@ -1,0 +1,50 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $grey-color;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    color: $blue-color;
+}
+
+.titleBox {
+    padding-top: 40px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media #{$tablet} {
+    .titleBox {
+        padding: 40px;
+    }
+}
+
+
+
+@media #{$desktop} {
+    .content {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 64px;
+    }
+}

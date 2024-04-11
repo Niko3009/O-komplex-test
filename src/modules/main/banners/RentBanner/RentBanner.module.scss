@@ -1,0 +1,192 @@
+@import '@/assets/all.scss';
+@import '@/app/layout.module.scss';
+
+.module {
+    background-color: $grey-color;
+}
+
+.wrapper {
+    padding: 0 24px;
+    color: $white-color;
+
+    h3 {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+}
+
+.innerBox {
+    background-color: $blue-color;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    cursor: pointer;
+
+    &>* {
+        padding: 0 24px;
+    }
+
+    @include mouse-hover {
+        .buttonBox {
+            padding: 0;
+
+            .buttonLayout {
+                padding: 24px;
+            }
+
+            button {
+                background-color: transparent;
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.imageBox {
+    width: 100%;
+    aspect-ratio: 1.25;
+    padding-bottom: 20px;
+}
+
+.messageBox {
+    .textBox {
+        min-height: fit-content;
+        width: 100%;
+    }
+}
+
+.buttonBox {
+    width: 100%;
+    padding: 0;
+    padding-left: 24px;
+    padding-top: 24px;
+    @include transition(500ms);
+
+    .buttonLayout {
+        width: 100%;
+        background-color: $red-color;
+
+        padding-right: 24px;
+        padding-bottom: 24px;
+    }
+
+    button {
+        width: 100%;
+        pointer-events: none;
+    }
+}
+
+@media #{$tablet} {
+    .wrapper {
+        height: 270px;
+        padding: 0 24px;
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+
+    .innerBox {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        grid-template-rows: 1fr 128px;
+
+        &>* {
+            &:nth-child(1) {
+                grid-row-start: 1;
+                grid-row-end: -1;
+            }
+        }
+
+        @include mouse-hover {
+            .buttonBox {
+                padding: 0;
+
+                .buttonLayout {
+                    padding: 24px;
+                }
+
+                button {
+                    background-color: transparent;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .imageBox {
+        height: 100%;
+    }
+
+    .messageBox {
+        height: 100%;
+        padding: 48px 32px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .buttonBox {
+        height: 100%;
+        padding: 0;
+
+        padding-left: 24px;
+        padding-top: 24px;
+
+        .buttonLayout {
+            height: 100%;
+            padding: 0;
+            padding-right: 24px;
+            padding-bottom: 24px;
+        }
+
+        button {
+            width: auto;
+        }
+    }
+}
+
+@media #{$desktop} {
+
+    .wrapper {
+        height: 400px;
+        padding: 0 40px;
+
+        h3 {
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 34px;
+        }
+    }
+
+    .innerBox {
+        display: grid;
+        grid-template-columns: 720px 1fr;
+        grid-template-rows: 1fr 150px;
+
+        @include mouse-hover {
+            .buttonBox {
+                padding: 0;
+
+                .buttonLayout {
+                    padding: 24px;
+                }
+
+                button {
+                    background-color: transparent;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .messageBox {
+        padding: 48px 32px;
+    }
+}
