@@ -1,9 +1,12 @@
-import Banner404 from '@/main/Banner404'
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function () {
-  return (
-    <>
-      <Banner404 />
-    </>
-  )
+  const redirect = useRouter().push
+  useEffect(() => {
+    redirect('/')
+  })
+  return null
 }

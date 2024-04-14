@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux'
 import { getModulesData } from '@/store/selectors/page'
 import Animation from '@/containers/Animation'
-import { Title, Slider } from './components'
+import { Title } from './components'
 
 import styles from './HeroSection.module.scss'
 
@@ -11,7 +11,6 @@ export default function HeroSection() {
   const modulesData = useSelector(getModulesData)
 
   const heading = modulesData?.['heading']?.data
-  const slides = modulesData?.['sliders']?.data
   const title = heading?.title
   const description = heading?.description
 
@@ -27,7 +26,6 @@ export default function HeroSection() {
         >
           <div className={styles.content}>
             <Title {...{ title, description }} />
-            <Slider {...{ slides }} />
           </div>
         </Animation>
       </div>

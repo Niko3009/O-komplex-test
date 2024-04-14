@@ -22,40 +22,28 @@
   }
 
   &:root {
-    // breakpoints
     --mobile: $mobile;
     --tablet: $tablet;
     --desktop: $desktop;
-    // colors
-    --color-white: $white-color;
-    --color-astronaut: $blue-color;
-    --color-thunderbird: $red-color;
-    --color-black-squeeze: $grey-color;
   }
 
   &,
   * {
-
-
     &::-webkit-scrollbar {
       width: $scrollbar-width;
       height: $scrollbar-height
     }
 
     &::-webkit-scrollbar-track {
-      background: $blue-color-1
+      background: $grey-color
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $blue-color;
-
-      @include mouse-hover {
-        background-color: $red-color
-      }
+      background-color: $white-color;
     }
 
     @-moz-document url-prefix() {
-      scrollbar-color: $blue-color $blue-color-1;
+      scrollbar-color: $white-color $grey-color;
       scrollbar-width: thin;
     }
   }
@@ -69,20 +57,13 @@ body {
 
 body {
   position: relative;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  background-color: $black-color;
   min-width: $min-width-device;
   max-width: $max-width-device;
-
   overflow-y: scroll;
   overflow-x: hidden;
-  // scroll-behavior: smooth;
-
   line-height: normal;
-  text-size-adjust: none;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
-  -webkit-font-smoothing: antialiased;
 }
 
 div,
@@ -139,55 +120,15 @@ span {
 }
 
 h1 {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 29px;
-}
-
-h2 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 22px;
-}
-
-p {
-  font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-}
-
-@media #{$tablet} {
-  h1 {
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 34px;
-  }
-
-  h2 {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 24px;
-  }
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-  }
+  font-size: 40px;
+  line-height: 48px;
 }
 
 @media #{$desktop} {
   h1 {
-    @include font(48px, 500, 58px);
-  }
-
-  h2 {
-    @include font(40px, 500, 48px);
-  }
-
-  p {
-    @include font(20px, 400, 30px);
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 116px;
   }
 }
-
-@import '@/global/styles/checkbox.scss';

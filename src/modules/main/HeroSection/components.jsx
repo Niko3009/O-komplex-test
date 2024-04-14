@@ -1,7 +1,6 @@
 'use client'
 
 import Image from '@/ui/Image'
-import Slider from '@/ui/Slider'
 import useMediaQuery from '@/hooks/useMediaQuery'
 
 import styles from './HeroSection.module.scss'
@@ -14,19 +13,6 @@ export function Title({ title, description }) {
     </div>
   )
 }
-
-function CustomSlider({ slides = [] }) {
-  return (
-    <div className={styles.sliderBox}>
-      <Slider sliderButtonsClassName={styles.sliderButtons}>
-        {slides.map((data, i) => (
-          <Slide {...{ data }} key={i} id={i + 1} />
-        ))}
-      </Slider>
-    </div>
-  )
-}
-export { CustomSlider as Slider }
 
 export function Slide({ data = {}, id }) {
   const isDesktopMode = useMediaQuery('desktop')

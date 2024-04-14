@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { useSelector } from 'react-redux'
 import { getModulesData } from '@/store/selectors/page'
 import Form from './Form'
-import { Title, Pattern } from './components'
+import { Title } from './components'
 
 import styles from './styles/Request.module.scss'
 
@@ -39,7 +39,6 @@ export default function Request({
             <p>{description}</p>
           </Title>
           <Form {...{ isExtended, allServices, successLogo, pageName }} />
-          <Pattern />
         </div>
       </div>
     </div>
